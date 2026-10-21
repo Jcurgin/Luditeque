@@ -1,4 +1,4 @@
-# Construit le fichier app-release.aab à envoyer sur Google Play.
+# Construit app-release.aab (pour Google Play) et app-release.apk (installation directe sur une tablette).
 # Lancement : onglet « Actions » du dépôt → « Construire l'appli Android » → « Run workflow ».
 name: Construire l'appli Android
 
@@ -54,11 +54,18 @@ jobs:
           VERSION_NAME: ${{ inputs.version_name }}
         run: |
           chmod +x gradlew
-          ./gradlew bundleRelease --no-daemon
+          ./gradlew bundleRelease assembleRelease --no-daemon
 
-      - name: Mettre le fichier à disposition
+      - name: Mettre le fichier .aab à disposition (pour Google Play)
         uses: actions/upload-artifact@v6
         with:
           name: luditeque-aab-v${{ inputs.version_name }}-build${{ github.run_number }}
           path: android/app/build/outputs/bundle/release/app-release.aab
+          if-no-files-found: error
+
+      - name: Mettre le fichier .apk à disposition (installation directe sur la tablette)
+        uses: actions/upload-artifact@v6
+        with:
+          name: luditeque-apk-v${{ inputs.version_name }}-build${{ github.run_number }}
+          path: android/app/build/outputs/apk/release/app-release.apk
           if-no-files-found: error
