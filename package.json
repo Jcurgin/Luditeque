@@ -1,0 +1,21 @@
+{
+  "name": "luditeque",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Luditèque, appli éducative ludique (CE1-CM1)",
+  "scripts": {
+    "icones": "capacitor-assets generate --android",
+    "sync": "cap sync android",
+    "ouvrir": "cap open android"
+  },
+  "dependencies": {
+    "@capacitor-community/text-to-speech": "8.0.2",
+    "@capacitor/android": "8.5.2",
+    "@capacitor/app": "8.1.2",
+    "@capacitor/core": "8.5.2"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "3.0.5",
+    "@capacitor/cli": "8.5.2"
+  }
+}

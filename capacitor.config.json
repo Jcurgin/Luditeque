@@ -1,0 +1,8 @@
+{
+  "appId": "fr.luditeque.app",
+  "appName": "Luditèque",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#e6f3ff"
+  }
+}

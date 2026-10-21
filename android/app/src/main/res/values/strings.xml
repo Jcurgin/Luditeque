@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Luditèque</string>
+    <string name="title_activity_main">Luditèque</string>
+    <string name="package_name">fr.luditeque.app</string>
+    <string name="custom_url_scheme">fr.luditeque.app</string>
+</resources>
